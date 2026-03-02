@@ -94,7 +94,7 @@ const Hero = () => {
             <img
               src={personal.avatar}
               alt={`${personal.name} avatar`}
-              className="h-full w-full object-cover"
+              className="h-full w-full rounded-full object-cover"
               loading="lazy"
             />
           </div>
