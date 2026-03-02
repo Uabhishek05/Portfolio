@@ -9,6 +9,22 @@ const Navbar = ({ activeSection, theme, onToggleTheme }) => {
   const closeMenu = () => setMenuOpen(false);
   const isLight = theme === 'light';
 
+  const smoothScrollToSection = (event, id, shouldClose = false) => {
+    event.preventDefault();
+    const target = document.getElementById(id);
+    if (!target) return;
+
+    const navbarOffset = 84;
+    const targetTop = target.getBoundingClientRect().top + window.scrollY - navbarOffset;
+
+    window.scrollTo({
+      top: targetTop,
+      behavior: 'smooth'
+    });
+
+    if (shouldClose) closeMenu();
+  };
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-xl ${
@@ -16,7 +32,7 @@ const Navbar = ({ activeSection, theme, onToggleTheme }) => {
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <a href="#home" className="inline-flex items-center gap-2.5">
+        <a href="#home" onClick={(event) => smoothScrollToSection(event, 'home')} className="inline-flex items-center gap-2.5">
           <img
             src="/avatar.jpeg"
             alt="Abhishek avatar"
@@ -37,6 +53,7 @@ const Navbar = ({ activeSection, theme, onToggleTheme }) => {
             <a
               key={item.id}
               href={`#${item.id}`}
+              onClick={(event) => smoothScrollToSection(event, item.id)}
               className={`nav-link rounded-full px-4 py-2 text-sm transition ${
                 activeSection === item.id
                   ? isLight
@@ -103,7 +120,7 @@ const Navbar = ({ activeSection, theme, onToggleTheme }) => {
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                onClick={closeMenu}
+                onClick={(event) => smoothScrollToSection(event, item.id, true)}
                 className={`rounded-lg px-3 py-2 text-sm ${
                   activeSection === item.id
                     ? isLight

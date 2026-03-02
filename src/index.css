@@ -8,6 +8,8 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -18,6 +20,7 @@ body {
     radial-gradient(circle at 50% 90%, rgba(56, 189, 248, 0.08), transparent 40%);
   background-size: 120% 120%;
   animation: ambientShift 24s ease-in-out infinite;
+  overscroll-behavior-y: none;
 }
 
 .theme-light {
