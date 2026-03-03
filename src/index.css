@@ -313,6 +313,7 @@ h6 {
   padding: 0.34rem 0.7rem;
   font-size: 0.9rem;
   color: #e2e8f0;
+  white-space: nowrap;
   transition: transform 0.18s ease, border-color 0.22s ease, background-color 0.22s ease;
 }
 
@@ -326,12 +327,42 @@ h6 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 2.05rem;
+  width: 2.05rem;
+  height: 1.3rem;
   border-radius: 0.45rem;
   padding: 0.18rem 0.35rem;
   font-size: 0.74rem;
   font-weight: 700;
+  line-height: 1;
   letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+.skills-pill-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .skills-pill-wrap {
+    justify-content: center;
+    gap: 0.62rem;
+  }
+
+  .skill-modern-pill {
+    min-height: 2.35rem;
+    padding: 0.4rem 0.68rem;
+    font-size: 0.84rem;
+  }
+
+  .skill-modern-badge {
+    width: 1.9rem;
+    height: 1.2rem;
+    font-size: 0.7rem;
+  }
 }
 
 .theme-light .skill-modern-pill {

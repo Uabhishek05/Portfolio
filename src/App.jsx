@@ -204,12 +204,12 @@ const App = () => {
             subtitle="Modern frontend capabilities across development, interaction design, APIs, and tooling."
           />
           <Reveal>
-            <article className="glass-card mx-auto max-w-6xl p-6 sm:p-8">
-              <h3 className="text-3xl font-semibold text-white">Skills</h3>
-              <p className="mt-3 text-base text-slate-300">
+            <article className="glass-card mx-auto max-w-6xl p-5 sm:p-8">
+              <h3 className="text-center text-2xl font-semibold text-white sm:text-left sm:text-3xl">Skills</h3>
+              <p className="mt-3 text-center text-sm text-slate-300 sm:text-left sm:text-base">
                 From frontend frameworks to APIs and developer tools, here&apos;s what I use.
               </p>
-              <div className="mt-6 flex flex-wrap gap-3">
+              <div className="skills-pill-wrap mt-6">
                 {allSkills.map((skill, index) => (
                   <span key={skill} className="skill-modern-pill">
                     <span
