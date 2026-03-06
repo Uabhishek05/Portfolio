@@ -10,6 +10,7 @@
     "lint": "eslint . --ext js,jsx --max-warnings 0"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.6.1",
     "framer-motion": "^11.18.2",
     "lucide-react": "^0.469.0",
     "react": "^18.3.1",
