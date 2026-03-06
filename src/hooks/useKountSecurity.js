@@ -20,10 +20,6 @@ const useKountSecurity = () => {
     if (!enabled) return;
 
     if (!merchantId || !collectorUrl) {
-      // eslint-disable-next-line no-console
-      console.warn(
-        '[Kount] Missing VITE_KOUNT_MERCHANT_ID or VITE_KOUNT_COLLECTOR_URL. Device collection skipped.'
-      );
       return;
     }
 

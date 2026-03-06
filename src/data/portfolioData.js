@@ -76,7 +76,7 @@ export const projects = [
       'Better data presentation techniques for admin-focused products',
       'Planning API-first flows while keeping UI interactions smooth'
     ],
-    previewImage: '/project-employee-management.jpg',
+    previewImage: '/project-employee-management.webp',
     previewGradient: 'linear-gradient(135deg, rgba(15,23,42,0.92), rgba(30,41,59,0.9))',
     demo: 'https://employee-management-system-ten-lilac.vercel.app',
     github: 'https://github.com/Uabhishek05/Employee-Management-System',
@@ -100,7 +100,7 @@ export const projects = [
       'Type-safe component patterns with TypeScript in React',
       'Balancing performance and visual polish in UI-heavy screens'
     ],
-    previewImage: '/project-gemini-new.png',
+    previewImage: '/project-gemini-new.webp',
     previewGradient: 'linear-gradient(135deg, rgba(2,6,23,0.95), rgba(15,23,42,0.9))',
     demo: 'https://gemini-3-gray.vercel.app/',
     github: 'https://github.com/Uabhishek05/GeminiClone'
@@ -124,7 +124,7 @@ export const projects = [
       'Building reusable section templates without losing visual quality',
       'Improving UX clarity through content-first component layout'
     ],
-    previewImage: '/project-therapy.jpg',
+    previewImage: '/project-therapy.webp',
     previewGradient: 'linear-gradient(135deg, rgba(12,74,110,0.9), rgba(14,116,144,0.85))',
     demo: 'https://therapy-premium.vercel.app',
     github: 'https://github.com/Uabhishek05/Therapy-premium'
@@ -139,7 +139,7 @@ export const personal = {
   phone: '+91 8855897420',
   github: 'https://github.com/uabhishek05',
   linkedin: 'https://www.linkedin.com/in/uabhishek05',
-  avatar: '/avatar.jpeg',
+  avatar: '/avatar.webp',
   heroHighlights: ['TypeScript', 'React.js', 'Tailwind CSS', 'REST APIs'],
   about:
     'I build responsive web applications using React.js, Tailwind CSS, and TypeScript, while continuously exploring modern tools and techniques to improve performance and user experience.'

@@ -1,9 +1,19 @@
+import { memo } from 'react';
 import { ArrowDownRight, Download, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { personal } from '../data/portfolioData';
 
 const typedRole = 'A Frontend developer.';
+const heroTechStack = [
+  'React.js',
+  'TypeScript',
+  'Tailwind CSS',
+  'JavaScript (ES6+)',
+  'Framer Motion',
+  'REST APIs',
+  'Vite'
+];
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState('');
@@ -22,7 +32,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="relative overflow-hidden pt-28 sm:pt-32">
+    <section id="home" className="relative overflow-hidden pt-24 sm:pt-28">
     <div className="hero-ambient" aria-hidden="true" />
     <div className="hero-vectors" aria-hidden="true">
       <span className="vector-ring vector-ring-lg" />
@@ -32,7 +42,7 @@ const Hero = () => {
       <span className="vector-line vector-line-2" />
       <span className="vector-dot-grid" />
     </div>
-    <div className="mx-auto grid max-w-6xl gap-10 px-4 pb-20 sm:px-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+    <div className="mx-auto grid max-w-6xl gap-10 px-4 pb-12 sm:px-6 sm:pb-14 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
       <div>
         <motion.h1
           initial={{ opacity: 0, y: 18 }}
@@ -40,7 +50,7 @@ const Hero = () => {
           transition={{ duration: 0.55, delay: 0.05 }}
           className="text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl"
         >
-          Hey, I'm Abhishek👋 -
+          Hey, I&apos;m Abhishek👋 -
           <span className="mt-2 block text-2xl font-medium text-sky-300 sm:text-3xl">
             {displayText}
             <span className="typing-cursor" aria-hidden="true">
@@ -95,7 +105,8 @@ const Hero = () => {
               src={personal.avatar}
               alt={`${personal.name} avatar`}
               className="h-full w-full rounded-full object-cover"
-              loading="lazy"
+              loading="eager"
+              fetchPriority="high"
             />
           </div>
           <div>
@@ -118,15 +129,7 @@ const Hero = () => {
         <div className="mt-5">
           <p className="text-[11px] uppercase tracking-[0.18em] text-slate-400">Tech Stack</p>
           <div className="mt-3 flex flex-wrap gap-2">
-            {[
-              'React.js',
-              'TypeScript',
-              'Tailwind CSS',
-              'JavaScript (ES6+)',
-              'Framer Motion',
-              'REST APIs',
-              'Vite'
-            ].map((tech) => (
+            {heroTechStack.map((tech) => (
               <span key={tech} className="tech-pill">
                 {tech}
               </span>
@@ -143,4 +146,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default memo(Hero);

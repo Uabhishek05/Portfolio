@@ -1,15 +1,15 @@
+import { memo, useCallback, useState } from 'react';
 import { Menu, Moon, Sun, X } from 'lucide-react';
-import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { navItems } from '../data/portfolioData';
+import { navItems, personal } from '../data/portfolioData';
 
 const Navbar = ({ activeSection, theme, onToggleTheme }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const closeMenu = () => setMenuOpen(false);
+  const closeMenu = useCallback(() => setMenuOpen(false), []);
   const isLight = theme === 'light';
 
-  const smoothScrollToSection = (event, id, shouldClose = false) => {
+  const smoothScrollToSection = useCallback((event, id, shouldClose = false) => {
     event.preventDefault();
     const target = document.getElementById(id);
     if (!target) return;
@@ -23,7 +23,11 @@ const Navbar = ({ activeSection, theme, onToggleTheme }) => {
     });
 
     if (shouldClose) closeMenu();
-  };
+  }, [closeMenu]);
+
+  const toggleMenu = useCallback(() => {
+    setMenuOpen((prev) => !prev);
+  }, []);
 
   return (
     <header
@@ -34,10 +38,11 @@ const Navbar = ({ activeSection, theme, onToggleTheme }) => {
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <a href="#home" onClick={(event) => smoothScrollToSection(event, 'home')} className="inline-flex items-center gap-2.5">
           <img
-            src="/avatar.jpeg"
+            src={personal.avatar}
             alt="Abhishek avatar"
             className="h-8 w-8 rounded-lg border border-sky-300/40 object-cover"
-            loading="lazy"
+            loading="eager"
+            fetchPriority="high"
           />
           <span
             className={`text-sm font-semibold tracking-[0.25em] ${
@@ -99,7 +104,7 @@ const Navbar = ({ activeSection, theme, onToggleTheme }) => {
             className={`rounded-lg p-2 transition ${
               isLight ? 'text-slate-800 hover:bg-slate-100' : 'text-slate-200 hover:bg-white/10'
             }`}
-            onClick={() => setMenuOpen((prev) => !prev)}
+            onClick={toggleMenu}
           >
             {menuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -141,4 +146,4 @@ const Navbar = ({ activeSection, theme, onToggleTheme }) => {
   );
 };
 
-export default Navbar;
+export default memo(Navbar);

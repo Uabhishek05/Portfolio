@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { motion } from 'framer-motion';
 
 const Reveal = ({ children, delay = 0, y = 20 }) => (
@@ -11,4 +12,4 @@ const Reveal = ({ children, delay = 0, y = 20 }) => (
   </motion.div>
 );
 
-export default Reveal;
+export default memo(Reveal);

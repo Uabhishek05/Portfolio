@@ -1,20 +1,23 @@
+import { memo, useCallback, useEffect, useState } from 'react';
 import { ArrowUp } from 'lucide-react';
-import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const BackToTop = () => {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setShow(window.scrollY > 400);
+    const onScroll = () => {
+      const shouldShow = window.scrollY > 400;
+      setShow((prev) => (prev === shouldShow ? prev : shouldShow));
+    };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const scrollToTop = () => {
+  const scrollToTop = useCallback(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  }, []);
 
   return (
     <AnimatePresence>
@@ -35,4 +38,4 @@ const BackToTop = () => {
   );
 };
 
-export default BackToTop;
+export default memo(BackToTop);
