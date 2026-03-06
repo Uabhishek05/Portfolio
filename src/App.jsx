@@ -13,6 +13,7 @@ import {
   Send,
   X
 } from 'lucide-react';
+import { Analytics } from '@vercel/analytics/react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import SectionHeading from './components/SectionHeading';
@@ -644,6 +645,7 @@ const App = () => {
       </footer>
 
       <BackToTop />
+      <Analytics />
     </div>
   );
 };
