@@ -62,7 +62,7 @@ export const projects = [
     description:
       'An employee-focused management dashboard designed to organize workforce data with clean, role-based views, reusable UI components, and responsive layouts built for practical day-to-day usage.',
     details:
-      'Employee Management System is a practical admin dashboard project focused on managing workforce records efficiently. It is being built with reusable components, clean state flow, and responsive UI patterns so teams can manage employee information smoothly across devices.',
+      'Employee Management System is a practical admin dashboard project focused on managing workforce records efficiently. It uses reusable components, clean state flow, and responsive UI patterns so teams can manage employee information smoothly across devices.',
     techStack: ['React.js', 'JavaScript (ES6+)', 'Tailwind CSS', 'REST APIs', 'Vite'],
     features: [
       'Employee listing with structured role-based information cards',
@@ -76,10 +76,10 @@ export const projects = [
       'Better data presentation techniques for admin-focused products',
       'Planning API-first flows while keeping UI interactions smooth'
     ],
+    previewImage: '/project-employee-management.jpg',
     previewGradient: 'linear-gradient(135deg, rgba(15,23,42,0.92), rgba(30,41,59,0.9))',
-    demo: '#',
+    demo: 'https://employee-management-system-ten-lilac.vercel.app',
     github: 'https://github.com/Uabhishek05/Employee-Management-System',
-    inProgress: true
   },
   {
     title: 'Gemini AI Chat UI Clone',
